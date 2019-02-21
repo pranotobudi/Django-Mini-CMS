@@ -111,3 +111,15 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'login'
+
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
+MEDIA_URL = '/media/'
+print('|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||')
+print('|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||')
+print('os.path.abspath: ', os.path.abspath(__file__))
+print('os.path.dirname(os.path.abspath(__file__)): ', os.path.dirname(os.path.abspath(__file__)))
+print('BASE_DIR: ', BASE_DIR)
+print('MEDIA_ROOT: ', MEDIA_ROOT)
+print('MEDIA_URL: ', MEDIA_URL)
+print('|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||')
+print('|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||')
