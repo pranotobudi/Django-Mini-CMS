@@ -4,8 +4,8 @@
     <h1>Blog Home ({{  page_obj.paginator.count }})</h1>    
     {% for post in posts %}
     <article class="media content-section">
-        <img class="rounted-circle article-img" src="{{ user.profile.image.url }}" /> 
-        <!-- <img class="rounted-circle article-img" src="{{ post.author.profile.image.url }}" />  -->
+        <!-- <img class="rounded-circle article-img" src="{{ user.profile.image.url }}" />  -->
+        <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}" /> 
         <div class="media-body">
             <div class="article-metadata">
             <a class="mr-2" href="{% url 'post-user' post.author %}">{{ post.author }}</a>
