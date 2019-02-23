@@ -13,6 +13,8 @@ pillow = "*"
 gunicorn = "*"
 django-heroku = "*"
 whitenoise = "*"
+boto3 = "*"
+django-storages = "*"
 
 [requires]
 python_version = "3.7"
