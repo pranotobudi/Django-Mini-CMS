@@ -3,7 +3,7 @@ from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-mini-cms.herokuapp.com']
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
