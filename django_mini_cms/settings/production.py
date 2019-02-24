@@ -22,9 +22,9 @@ DATABASES = {
     }
 }
 
-AWS_ACCESS_KEY_ID =  "AKIAIGUNMG5H4WWNAIAA"
-AWS_SECRET_ACCESS_KEY = "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"
-AWS_STORAGE_BUCKET_NAME = 'django-mini-cms'
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
 AWS_ACCESS_KEY_ID =  os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')

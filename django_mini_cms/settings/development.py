@@ -1,4 +1,10 @@
 from .base import *
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'q%h$n5x$7di0v8m9uy9*1qxf@ph#t+yxd%7qz+#)9u$8_i#usj'
+
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
