@@ -25,6 +25,7 @@ def profile(request):
         p_form = ProfileUpdateForm(request.POST, 
                                     request.FILES, 
                                     instance=request.user.profile)
+        #instance argument is a way to provide data to the form
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
