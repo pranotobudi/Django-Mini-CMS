@@ -7,7 +7,7 @@ class TestModels:
     # @pytest.fixture #it declare this function as fixture, we don't mean it, we want to use db fixture
     def test_post_db_is_created(self, db):
         #db is a fixture
-        post = Post.objects.create(
+        Post.objects.create(
             title = 'title 1',
             content = 'content 1',
             # date_posted = models.DateTimeField(default=timezone.now)
