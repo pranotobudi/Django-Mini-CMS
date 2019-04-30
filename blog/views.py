@@ -55,6 +55,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     fields = [ 'title', 'content']
     template_name = 'blog/post_form.html'
 
+
     def form_valid(self, form):
         #this function to prevent IntegrityError (NOT NULL constraint failed: blog_post.author_id), 
         # because the models Post need author
@@ -68,6 +69,9 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             return True 
         else:
             return False
+
+    # def get_object(self):
+    #     return get_object_or_404(User, pk=self.request.session['user_id'])
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post 
