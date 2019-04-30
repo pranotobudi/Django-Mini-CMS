@@ -15,6 +15,9 @@ django-heroku = "*"
 whitenoise = "*"
 boto3 = "*"
 django-storages = "*"
+pytest-django = "*"
+pytest = "*"
+mixer = "*"
 
 [requires]
 python_version = "3.7"

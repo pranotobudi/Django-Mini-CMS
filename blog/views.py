@@ -29,6 +29,7 @@ class UserPostListView(ListView):
     paginate_by = 2
 
     def get_queryset(self):
+        #we need to costumize get_queryset function, if it doesn't, it will return all posts
         user = get_object_or_404(User, username=self.kwargs.get('username'))
         return Post.objects.filter(author=user)
 
@@ -43,6 +44,9 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     template_name = 'blog/post_form.html'
 
     def form_valid(self, form):
+        #this function to prevent IntegrityError (NOT NULL constraint failed: blog_post.author_id), 
+        # because the models Post need author
+        #and by overriding this function we can insert author to this form
         form.instance.author = self.request.user
         return super().form_valid(form)
     
@@ -51,7 +55,11 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     fields = [ 'title', 'content']
     template_name = 'blog/post_form.html'
 
+
     def form_valid(self, form):
+        #this function to prevent IntegrityError (NOT NULL constraint failed: blog_post.author_id), 
+        # because the models Post need author
+        #and by overriding this function we can insert author to this form
         form.instance.author = self.request.user
         return super().form_valid(form)
 
@@ -61,6 +69,9 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             return True 
         else:
             return False
+
+    # def get_object(self):
+    #     return get_object_or_404(User, pk=self.request.session['user_id'])
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post 
@@ -79,6 +90,7 @@ def About(request):
     return render(request, 'blog/about.html')
 
 def post_load(request):
+    #this function only to load post if needed
     for post in posts:
         print(post)
         post = Post(title=post['title'], content=post['content'], author=request.user)

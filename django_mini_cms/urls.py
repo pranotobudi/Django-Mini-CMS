@@ -36,3 +36,4 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    #it enables media image url to be detected autoamtically from our django template
